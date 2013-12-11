@@ -1,0 +1,78 @@
+﻿
+<div ng-controller="itemController" ng-show="contentItem" class="content-menu-list">
+    <div class="row create-new-item" ng-show="createItemOld">
+        <div class="large-5 columns">
+            <span>Buscar: </span>
+            <input type="text" ng-model="search" />
+        </div>
+        <div class="large-5 columns"></div>
+        <div class="large-2 columns">
+            <div class="new-item" ng-click="createNewItem()">Crear nuevo</div>
+        </div>
+    </div>
+    <div class="row" ng-show="createItemOld">
+        <hr />
+    </div>
+    <div class="row create-item-dark" ng-show="createItem">
+        <form name="newItem">
+            <div class="large-1 columns icon-category">
+                <embed class="menu-image-svg" src="../Images/Menu/Icon-post.svg" type="image/svg+xml" />
+            </div>
+            <div class="large-7 columns create-input">
+                <div>
+                    <select ng-model="itemCategory" required>
+                        <option>Proteinas</option>
+                        <option>Entradas</option>
+                        <option>Bebidas</option>
+                        <option>Vegetales</option>
+                        <option>Postres</option>
+                        <option>Carbohidratos</option>
+                    </select>
+                </div>
+                <input type="text" ng-model="itemName" placeholder="Escriba el nombre" required />
+            </div>
+            <div class="large-4 columns item-button">
+                <span ng-click="saveItem({Name: itemName, UrlPhoto:'~/Images/Menu/', Category: 1, Like: 0, Dislike: 0, Status: true })" ng-disabled="isSaveDisabled()">Guardar</span>
+                <span ng-click="cancelCreateItem()" ng-disabled="isCancelDisabled()">Cancelar</span>
+            </div>
+        </form>
+    </div>
+    <div class="row content-table">
+        <table class="large-12 columns">
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th><img src="../Images/Menu/order.gif" ng-click="predicate = 'Name'" /><img src="../Images/Menu/orderUp.gif" ng-click="predicate = '-Name'" /></th>
+                    <th>Reputación <img src="../Images/Menu/order.gif" ng-click="predicate = 'Count'" /><img src="../Images/Menu/orderUp.gif" ng-click="predicate = '-Count'" /></th>
+                    <th>Categoria <img src="../Images/Menu/order.gif" ng-click="predicate = 'Category'" /><img src="../Images/Menu/orderUp.gif" ng-click="predicate = '-Category'" /></th>
+                    <th>Estado</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="item in itemList | filter:search | orderBy:predicate" ng-click="addDailyLunch(item)">
+                    <td id="col-icon">
+                        <embed class="menu-image-svg" src="../Images/Menu/Icon-post.svg" type="image/svg+xml" style="width: 40px; height: 40px; background-color: #e6e6e6;" />
+                    </td>
+                    <td>
+                        <span class="name">{{ item.Name }}</span>
+                    </td>
+                    <td>
+                        <span class="detail-like">{{ item.Like }}</span>
+                        <span class="detail-dislike">{{ item.Dislike }}</span>
+                    </td>
+                    <td>
+                        <span>{{ item.CategoryString }}</span>
+                    </td>
+                    <td>
+                        <span ng-click="changeState(item)">{{ item.Status }}</span>
+                        <input type="text" ng-model="DateDailyGlobal" ng-show="Date" />
+                    </td>
+                </tr>
+            </tbody>
+            <tfoot></tfoot>
+        </table>
+    </div>
+    <div class="row">
+        <hr />
+    </div>
+</div>

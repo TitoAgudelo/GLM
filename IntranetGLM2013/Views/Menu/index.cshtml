@@ -1,0 +1,34 @@
+﻿
+@{
+    ViewBag.Title = "index";
+}
+
+<div ng-controller="menuController">
+    <div ng-class="{'progress': loading}">
+        <div class="row">
+            <div class="large-12 columns">
+                <h1>Menú Escolar</h1>
+            </div>
+        </div>
+        <div class="row tabbable">
+            <ul class="nav nav-tabs">
+                <li ng-class="{ active: isActive('/') }">
+                    <a href="#/" class="ng-binding">Ver Menú</a>
+                </li>
+                <li ng-class="{ active: isActive('/daily') }">
+                    <a href="#/daily" class="ng-binding">Diseñar Menú</a>
+                </li>
+                <li ng-class="{ active: isActive('/lunchItems') }">
+                    <a href="#/lunchItems" class="ng-binding">Administrar ítems</a>
+                </li>
+                <li class="menu-complete right">
+                    <span>Publicar semana</span>
+                </li>
+            </ul>
+        </div>
+        @*<div class="row" >
+            <div class="flecha-down"></div>
+        </div>*@
+        <ng-view></ng-view>
+    </div>
+</div>

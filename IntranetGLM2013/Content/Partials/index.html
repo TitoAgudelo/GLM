@@ -1,0 +1,121 @@
+﻿
+<div class="row">
+    <div class="large-12 columns" id="menu-date">
+        <span class="left week">
+            <span ng-model="before" class="day">
+                <span ng-model="dayDate" ng-show="dayGlobal">{{ before.Day }}</span>
+                <span ng-show="short"> {{ before.ShortDate }} </span>
+                <a href="" ng-click="exec(before.NameFunc, before)">< </a>
+            </span>
+            <span ng-click="setRoute('')">Hoy</span>
+            <span ng-model="after" class="day">
+                <span ng-model="dayDate" ng-show="dayGlobal">{{ after.Day }}</span>
+                <span ng-show="short"> {{ after.ShortDate }} </span>
+                <a href="" ng-click="exec(after.NameFunc, after)"> ></a>
+            </span>
+        </span>
+
+        <span ng-repeat="week in weeks" class="week-complete" >Semana {{ week.first }} - {{ week.last }}</span>
+        <span class="week-day right">
+            <span ng-click="setRoute('/')">Dias</span> | <a href="#/week"><span ng-click="getWeek()" ng-model="dailyWeek">Semanas</span></a>
+        </span>
+    </div>
+</div>
+
+<div class="row">
+    <div class="large-12 columns menu-days">
+        <span ng-repeat="date in dates" ng-class="{today: date.isToday}">
+            <span ng-model="dayDate" ng-show="dayGlobal">{{ date.Day }}</span>
+            <span ng-show="short"> {{ date.ShortDate }} </span>
+            <a href="" ng-click="exec(date.NameFunc, date)">{{ date.WeekDay }} {{ date.onlyDay }}</a>
+        </span>
+    </div>
+</div>
+<div class="row">
+    <div class="large-12 columns  menu-components">
+        <div class="day-component">
+            <span>Bebidas</span>
+            <div class="menu-image-ico" ng-model="drink" ng-class="{'drink': drink.select}">
+                <embed class="menu-image-svg" src="../Images/Menu/Icon-beb.svg" type="image/svg+xml" />
+            </div>
+            <div class="add-detail" ng-repeat="item in daily | filter: {Category:1}">
+                <div class="disqus">
+                    <span class="detail-like">{{ item.Like }}</span>
+                    <span class="detail-dislike">{{ item.Dislike }}</span>
+                    <a ng-click="unSelectItem(item)" class="right">X</a>
+                </div>
+                <span>{{ item.Name }}</span>
+            </div>
+        </div>
+        <div class="day-component">
+            <span>Entrada</span>
+            <div class="menu-image-ico" ng-model="entrance" ng-class="{'entrance': entrance.select}">
+                <embed class="menu-image-svg" src="../Images/Menu/Icon-entr.svg" type="image/svg+xml" />
+            </div>
+            <div class="add-detail" ng-repeat="item in daily | filter: {Category:2}">
+                <div class="disqus">
+                    <span class="detail-like">{{ item.Like }}</span>
+                    <span class="detail-dislike">{{ item.Dislike }}</span>
+                    <a ng-click="unSelectItem(item)" class="right">X</a>
+                </div>
+                <span>{{ item.Name }}</span>
+            </div>
+        </div>
+        <div class="day-component">
+            <span>Proteinas</span>
+            <div class="menu-image-ico" ng-model="protein" ng-class="{'protein': protein.select}">
+                <embed class="menu-image-svg" src="../Images/Menu/Icon-prot.svg" type="image/svg+xml" />
+            </div>
+            <div class="add-detail" ng-repeat="item in daily | filter: {Category:3}">
+                <div class="disqus">
+                    <span class="detail-like">{{ item.Like }}</span>
+                    <span class="detail-dislike">{{ item.Dislike }}</span>
+                    <a ng-click="unSelectItem(item)" class="right">X</a>
+                </div>
+                <span>{{ item.Name }}</span>
+            </div>
+        </div>
+        <div class="day-component">
+            <span>Carbohidratos</span>
+            <div class="menu-image-ico" ng-model="carbohydrate" ng-class="{'carbohydrate': carbohydrate.select}">
+                <embed class="menu-image-svg" src="../Images/Menu/Icon-carbo.svg" type="image/svg+xml" />
+            </div>
+            <div class="add-detail" ng-repeat="item in daily | filter: {Category:4}">
+                <div class="disqus">
+                    <span class="detail-like">{{ item.Like }}</span>
+                    <span class="detail-dislike">{{ item.Dislike }}</span>
+                    <a ng-click="unSelectItem(item)" class="right">X</a>
+                </div>
+                <span>{{ item.Name }}</span>
+            </div>
+        </div>
+        <div class="day-component">
+            <span>Vegetales</span>
+            <div class="menu-image-ico" ng-model="vegetable" ng-class="{'vegetable': vegetable.select}">
+                <embed class="menu-image-svg" src="../Images/Menu/Icon-veg.svg" type="image/svg+xml" />
+            </div>
+            <div class="add-detail" ng-repeat="item in daily | filter: {Category:5}">
+                <div class="disqus">
+                    <span class="detail-like">{{ item.Like }}</span>
+                    <span class="detail-dislike">{{ item.Dislike }}</span>
+                    <a ng-click="unSelectItem(item)" class="right">X</a>
+                </div>
+                <span>{{ item.Name }}</span>
+            </div>
+        </div>
+        <div class="day-component">
+            <span>Postre</span>
+            <div class="menu-image-ico" ng-model="dessert" ng-class="{'dessert': dessert.select}">
+                <embed class="menu-image-svg" src="../Images/Menu/Icon-post.svg" type="image/svg+xml" />
+            </div>
+            <div class="add-detail" ng-repeat="item in daily | filter: {Category:6}">
+                <div class="disqus">
+                    <span class="detail-like">{{ item.Like }}</span>
+                    <span class="detail-dislike">{{ item.Dislike }}</span>
+                    <a ng-click="unSelectItem(item)" class="right">X</a>
+                </div>
+                <span>{{ item.Name }}</span>
+            </div>
+        </div>
+    </div>
+</div>

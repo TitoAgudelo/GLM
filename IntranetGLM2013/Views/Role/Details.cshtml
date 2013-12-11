@@ -1,0 +1,82 @@
+﻿@model IntranetGLM2013.Models.Role
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Role</h4>
+	<hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IconURL)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IconURL)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Action)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Action)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.InMenuPpal)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.InMenuPpal)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.InMenuPersonal)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.InMenuPersonal)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IsActive)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IsActive)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IdFather)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IdFather)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

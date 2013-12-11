@@ -1,0 +1,91 @@
+﻿<div ng-controller="weekController">
+    <div class="row">
+        <div class="large-12 columns" id="menu-date">
+            <input type="text" ng-model="DateDailyGlobal" ng-show="Date" />
+            <span class="left week">
+                <span ng-model="before" class="day">
+                    <span ng-model="dayDate" ng-show="dayGlobal">{{ before.Day }}</span>
+                    <span ng-show="short"> {{ before.ShortDate }} </span>
+                    <a href="" ng-click="execu(before.NameFunc, before)">< </a>
+                </span>
+                <span>Hoy</span>
+                <span ng-model="after" class="day">
+                    <span ng-model="dayDate" ng-show="dayGlobal">{{ after.Day }}</span>
+                    <span ng-show="short"> {{ after.ShortDate }} </span>
+                    <a href="" ng-click="execu(after.NameFunc, after)"> ></a>
+                </span>
+            </span>
+
+            <span ng-repeat="week in weeks" class="week-complete">Semana {{ week.first }} - {{ week.last }}</span>
+            <span class="week-day right">
+                <span ng-click="setRoute('/')">Dias</span> | <span ng-click="setRoute('/week')">Semanas</span>
+            </span>
+        </div>
+    </div>
+    <div class="row">
+        <div class="large-12 columns table-week">
+            <table>
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th ng-repeat="date in dates" ng-class="{today: date.isToday}">
+                            <span ng-model="dayDate" ng-show="dayGlobal">{{ date.Day }}</span>
+                            <span ng-show="short"> {{ date.ShortDate }} </span>
+                            <a href="" ng-click="exec(date.NameFunc, date)">{{ date.WeekDay }} {{ date.onlyDay }}</a>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td></td>
+                        <td>
+                            <span ng-repeat="weekItem in weekItems | filter: {day:'Monday'}">
+                                <div class="disqus">
+                                    <span class="detail-like">{{ weekItem.like }}</span>
+                                    <span class="detail-dislike">{{ weekItem.dislike }}</span>
+                                </div>
+                                <span>{{weekItem.name }}</span>
+                            </span>
+                        </td>
+                        <td>
+                            <span ng-repeat="weekItem in weekItems | filter: {day:'Tuesday'}">
+                                <div class="disqus">
+                                    <span class="detail-like">{{ weekItem.like }}</span>
+                                    <span class="detail-dislike">{{ weekItem.dislike }}</span>
+                                </div>
+                                <span>{{weekItem.name }}</span>
+                            </span>
+                        </td>
+                        <td>
+                            <span ng-repeat="weekItem in weekItems | filter: {day:'Wednesday'}">
+                                <div class="disqus">
+                                    <span class="detail-like">{{ weekItem.like }}</span>
+                                    <span class="detail-dislike">{{ weekItem.dislike }}</span>
+                                </div>
+                                <span>{{weekItem.name }}</span>
+                            </span>
+                        </td>
+                        <td>
+                            <span ng-repeat="weekItem in weekItems | filter: {day:'Thursday'}">
+                                <div class="disqus">
+                                    <span class="detail-like">{{ weekItem.like }}</span>
+                                    <span class="detail-dislike">{{ weekItem.dislike }}</span>
+                                </div>
+                                <span>{{weekItem.name }}</span>
+                            </span>
+                        </td>
+                        <td>
+                            <span ng-repeat="weekItem in weekItems | filter: {day:'Friday'}">
+                                <div class="disqus">
+                                    <span class="detail-like">{{ weekItem.like }}</span>
+                                    <span class="detail-dislike">{{ weekItem.dislike }}</span>
+                                </div>
+                                <span>{{weekItem.name }}</span>
+                            </span>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

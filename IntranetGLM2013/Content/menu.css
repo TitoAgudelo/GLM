@@ -1,0 +1,451 @@
+/* menu options */
+
+.tabbable ul.nav {
+    margin-bottom: 1.9375em;
+    margin-top: 1.9375em;
+}
+
+.tabbable ul.nav li {
+	display: inline;
+}
+
+.tabbable ul.nav li a {
+	background-color: #E6E6E6;
+    color: #9F9F9F;
+    cursor: pointer;
+    font-size: 1em;
+    display: inline-block;
+    margin-right: 0.5em;
+    padding: 5px;
+    text-align: center;
+    text-decoration: none;
+    width: 15%;
+}
+
+.tab-content>.active, .pill-content>.active {
+	display: block !important;
+}
+
+.tabbable .nav-tabs>.active a{
+	background-color: #49A9F3;
+	color: white;
+}
+
+.tab-content>.tab-pane, .pill-content>.pill-pane {
+	display: none;
+}
+
+.menu-desing span {
+	background-color: #E6E6E6;
+	color: #9F9F9F;
+	cursor: pointer;
+	display: inline-block;
+	padding: 12px 15px;
+	text-align: center;
+	width: 26%;
+}
+
+.menu-desing span:hover {
+	background-color: #49A9F3;
+	color: white;
+}
+
+.menu-complete span {
+	background-color: #009900;
+	color: white;
+	cursor: pointer;
+	display: inline-block;
+	float: right;
+	padding: 5px 45px;
+	text-align: center;
+	width: 100%;
+}
+
+#menu-date {
+	margin-top: 10px;
+	text-align: center;
+	color: #000000;
+    font-size: 1.5em;
+	margin-right: 0.9375em;
+	padding: 10px;
+}
+
+
+#menu-date .week {
+    color: #9F9F9F;
+    background-color: #E6E6E6;
+    font-size: 0.7em;
+}
+
+    #menu-date .week span {
+        color: #9F9F9F;
+        display: inline-block; 
+        padding: 5px;
+    }
+
+    #menu-date .week a {
+        text-decoration: none;
+    }
+
+    #menu-date .week span.day:hover,  #menu-date .week a:hover {
+            background-color: #49A9F3;
+            color: white;
+        }
+
+    #menu-date .week-day {
+        cursor: pointer;
+        font-size: 12px;
+        margin-top: 10px;
+    }
+
+    #menu-date .week-day span:hover {
+        color: #49A9F3;
+    }
+
+    #menu-date .week-complete {
+        float: left;
+        margin-left: 15PX;
+    }
+
+.menu-days {
+	background-color: #E6E6E6;
+	cursor: pointer;
+	margin-right: 0.9375em;
+	padding: 0;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+
+.menu-days span {
+	background-color: #E6E6E6;
+    border-left: 1px solid white;
+    border-right: 1px solid white;
+	display: inline-block;
+	text-align: center;
+	width: 20%;
+}
+
+.menu-days span:hover {
+	background-color: #FF921E;
+}
+
+    .menu-days span.today {
+        background-color: #FF921E;
+    }
+
+    .menu-days span a {
+        color: #2B2B2B;
+        text-decoration: none;
+        display: block;
+        padding: 8px 14px;
+    }
+
+.menu-days span.special {
+	background-color: #CCCCCC;
+}
+
+.menu-days span.special:hover {
+	background-color: #3EA9F5;
+	color: white;
+}
+
+.menu-components {
+    background-color: white;
+    width: 100%;
+}
+
+.menu-components div.day-component {
+	color: #999999;
+	display: inline-block;
+	margin: 15px 11px;
+	text-align: center;
+    vertical-align: top;
+}
+
+.menu-components .day-component span {
+    display: block;   
+}
+
+.menu-components .menu-image-ico, .menu-add {
+	background-color: #E6E6E6;
+	cursor: pointer;
+    font-size: 0.875em;
+	padding: 8px;
+    margin: 0.5em 0;
+}
+
+.menu-components .menu-image-ico .menu-image-svg {
+	cursor: pointer;
+}
+
+.menu-components .menu-add:hover {
+	background-color: #49A9F3;
+	color: white;
+}
+
+.menu-components a {
+    color: white;
+    text-decoration: none;    
+}
+
+.menu-components .menu-list-items {
+	background-color: #49A9F3;
+    color: white;
+    display: inline-block;
+    font-size: 24px;
+    margin-bottom: 20px;
+    padding: 12px 25px;
+    text-align: center;
+    width: 46%;
+}
+
+.menu-components .menu-list-items:hover {
+	background-color: #49A9F3;
+	color: white;
+}
+
+.content-item {
+    color: #000000;
+    padding-top: 1em;
+    padding-left: 0.9375em;
+    padding-right: 0.9375em;
+}
+
+    .content-item select {
+        background-color: white;
+        height: 25px;
+        margin: 0 !important;
+        width: 64%;
+    }
+
+    .content-item input {
+        display: inline-block !important;
+        height: 30px;
+        margin: 0 !important;
+        width: 81% !important;
+    }
+
+.item-close {
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    display: inline-block;
+    float:right;
+    font-size: 0.75em;
+    font-weight: bold;
+    margin-top: 0;
+    color: #e6e6e6;
+    padding: 0.575em 1em;
+    width: auto;
+}
+
+.item-detail {
+    color: #000000;
+    cursor: pointer;
+    font-size: 0.9em;
+    text-align: center;
+}
+
+    .item-detail span {
+        display: block;
+    }
+
+
+.menu-image-ico {
+    background-color: #E6E6E6;
+    cursor: pointer;
+}
+
+.item-detail .menu-image-ico embed {
+    cursor: pointer;
+    width: 100%;
+}
+
+.detail-like {
+    background-color: #49A9F3;
+    color: white;
+    padding: 0 1em;
+}
+
+.detail-dislike {
+    background-color: #fe6e6e;
+    color: white;
+    padding: 0 1em;
+}
+
+.add-detail {
+    color: #000000;
+    display: block;
+    font-size: 0.85em;
+    margin: 1em 0;
+    text-align: left;
+}
+
+.add-detail .disqus span{
+    display: inline-block;
+}
+
+.add-detail .disqus a {
+    color: #999999;
+    float: right;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.create-new-item input {
+    display: inline-block;
+    height: 30px;
+    margin-left: 0.9375em;
+    margin-bottom: 0;
+    width: 77%;
+}
+
+.create-new-item p {
+    font-size: 0.875em;
+    margin: 0;
+}
+
+.new-item {
+    background-color: #524641;
+    color: white;
+    cursor: pointer;
+    font-size: 0.875em;
+    padding: 8px 15px;
+    text-align: center;
+}
+
+.content-menu-list .row {
+    background-color: white;
+}
+
+.content-table {
+    padding: 0 1.875em;
+}
+
+    .content-table table thead {
+        background-color: white;
+        border-bottom: 1px solid #F5F5F5;
+    }
+
+        .content-table table thead tr th {
+            padding: 12px 8px;
+        }
+
+        .content-table table thead tr th img {
+            cursor: pointer;
+        }
+
+    .content-table table tbody {
+    
+    }
+
+        .content-table table tbody tr {
+            cursor: pointer;
+        }
+
+        .content-table table tbody tr:hover {
+            background-color: #F5F5F5;
+        }
+
+        .content-table table tbody tr td#col-icon {
+            width: 7%;        
+        }
+
+.added {
+    background-color: red !important;
+}
+
+.create-item-dark {
+    background-color: #524641 !important;
+    padding: 20px;
+    width: 100%;
+}
+    
+    .create-item-dark .icon-category {
+        background-color: #811214;
+        cursor: pointer;
+        font-size: 0.875em;
+    }
+
+        .create-item-dark .icon-category embed {
+            height: 70px;
+            width: 85px;
+        }
+
+    .create-item-dark .create-input select {
+        width: 30%;    
+    }
+
+    .create-item-dark .item-button span {
+        background-color: #999999;
+        color: white;
+        display: inline-block;
+        padding: 8px 15px;
+        margin: 13% 2% 0;
+        text-align: center;
+        width: 45%;
+    }
+
+    .create-item-dark .item-button span:hover {
+        background-color: #B1B1B1;
+        cursor: pointer;
+    }
+
+.flecha-down {
+    width: 0px;
+    height: 0px;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-top: 15px solid #49A9F3;
+    font-size: 0px;
+    line-height: 0px;
+    margin-left: 6%;
+ }
+
+.table-week {
+    cursor: pointer;
+    margin-right: 0.9375em;
+    padding: 0;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+
+    .table-week table {
+        width: 100%;
+    }
+
+    .table-week table thead {
+        background-color: #999999;
+        width: 100%;
+    }
+
+        .table-week table thead a {
+            color: white;
+            font-weight: bold;
+        }
+
+/* icon colors */
+.drink {
+    background-color: #00CCFF !important; 
+}
+
+.entrance {
+    background-color: #996600 !important;
+}
+
+.protein {
+    background-color: #811214 !important;
+}
+
+.carbohydrate {
+    background-color: #CC9933 !important;
+}
+
+.vegetables {
+    background-color: #79C843 !important;
+}
+
+.dessert {
+    background-color: #FF6600 !important;
+}

@@ -1,0 +1,148 @@
+﻿<!DOCTYPE html>
+<!--[if IE 8]> 				 <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="en" ng-app="glm">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8" />
+
+    @*Set the viewport width to device width for mobile *@
+    <meta name="viewport" content="width=device-width" />
+
+    <title>@ViewBag.Title - Welcome to Foundation</title>
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic' rel='stylesheet' type='text/css'>
+
+    @Styles.Render("~/Content/css")
+    @Styles.Render("~/Content/foundation/css")
+
+    @RenderSection("head", required: false)
+    @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/moment")
+    @Scripts.Render("~/bundles/Libs/Angular")
+    @Scripts.Render("~/bundles/Angularjs")
+</head>
+<body>
+
+    <header class="header-nav">
+        <div class="large-1 columns">
+            <img id="image-logo" src="~/Images/Home/GLM-logo.png" width="123" height="75" alt="Gimnasio La Montaña">
+        </div>
+        @if (Request.IsAuthenticated)
+        {
+            <text>
+                <nav class="large-9 columns">
+                    <ul>
+                        <li>
+                            <a href="#">
+                                <span class="menu-icon">
+                                    <img src="~/Images/Home/books.png" alt="Clases" width="32" height="32">
+                                </span>
+                                <span class="menu-item">
+                                    Clases
+                                    <span class="menu-description">Planeación, informes, etc.</span>
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span class="menu-icon">
+                                    <img src="~/Images/Home/profile.png" alt="Clases" width="32" height="32">
+                                </span>
+                                <span class="menu-item">
+                                    Estudiantes
+                                    <span class="menu-description">Observador, listas, etc.</span>
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span class="menu-icon">
+                                    <img src="~/Images/Home/user.png" alt="Clases" width="32" height="32">
+                                </span>
+                                <span class="menu-item">
+                                    Empleados
+                                    <span class="menu-description">Certificados, datos, etc.</span>
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span class="menu-icon">
+                                    <img src="~/Images/Home/signup.png" alt="Clases" width="32" height="32">
+                                </span>
+                                <span class="menu-item">
+                                    Gestión de Calidad
+                                    <span class="menu-description">Buzón, documentación, etc.</span>
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span class="menu-icon">
+                                    <img src="~/Images/Home/file.png" alt="Clases" width="32" height="32">
+                                </span>
+                                <span class="menu-item">
+                                    Informes
+                                    <span class="menu-description">Académicos, boletines, etc.</span>
+                                </span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </text>
+        }
+        else
+        {
+
+        }
+        <div class="large-1 columns" id="personal-menu">
+            <a href="#">
+                <img src="~/Images/Home/personal-menu.png" width="30" height="25" alt="Personal menu">
+            </a>
+        </div>
+    </header>
+    @if (Request.IsAuthenticated)
+    {
+        <text>
+            <aside ng-controller="navController">
+                <header>
+                    @Html.Partial("_LoginPartial")
+                    <button ng-click="options()">Menu</button>
+                </header>
+                <nav ng-show="content">
+                    <ul>
+                        <li><a href="#">Mi cuenta</a></li>
+                        <li><a href="#">Favoritos</a></li>
+                        <li><a href="#">Calendario</a></li>
+                        <li><a href="#">Horario</a></li>
+                        <li><a href="#">Directorio</a></li>
+                        <li><a href="#">Menú escolar</a></li>
+                        <li><a href="#">Cadenas de comunicación</a></li>
+                    </ul>
+                </nav>
+            </aside>
+        </text>
+    }
+    else
+    {
+
+    }
+    <div class="container body-content">
+        @RenderBody()
+        @* Zepto polyfill: If you need to support Internet Explorer, you can fall back on jQuery. http://zeptojs.com/ *@
+        <script>
+            document.write('<script src=' +
+            ('__proto__' in {} ? '@Url.Content("~/scripts/zepto.js")' : '@Url.Content("~/scripts/jquery.js")') +
+          '><\/script>')
+        </script>
+        @Scripts.Render("~/bundles/foundation")
+        <script>
+            $(document).foundation();
+        </script>
+        @*Use the Scripts section to define page specific scripts*@
+        @RenderSection("scripts", required: false)
+    </div>
+</body>
+</html>
